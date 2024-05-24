@@ -33,13 +33,19 @@ function show() {
     quote.textContent = quotesArray.text;
     author.textContent = `-${quotesArray.author}-`;
     
-    animate();
     getQuotes();
+    addAnimation();
 }
 
-function animate() {
-    quote.style.animation = 'fade 2s';
-    author.style.animation = 'fade 2s';
+function addAnimation() {
+    quote.classList.add('animate');
+    author.classList.add('animate');
+    setTimeout(removeAnimation, 1000);
+}
+
+function removeAnimation() {
+    quote.classList.remove('animate');
+    author.classList.remove('animate');
 }
 
 setTimeout(show, 500)
