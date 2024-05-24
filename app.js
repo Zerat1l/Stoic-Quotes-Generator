@@ -2,10 +2,11 @@
 const quote = document.querySelector('#quote');
 const author = document.querySelector('#author');
 const mainElement = document.querySelector('#main');
+const tip = document.querySelector('#tooltip');
 
 window.addEventListener('load', getQuotes);
 
-let quotesArray = [];
+let quotesArray;
 
 function getQuotes() {
     try {
@@ -35,6 +36,7 @@ function show() {
   
     getQuotes();
     addAnimation();
+    setInterval(tooltipShow, 3000)
 }
 
 function addAnimation() {
@@ -46,6 +48,18 @@ function addAnimation() {
 function removeAnimation() {
     quote.classList.remove('animate');
     author.classList.remove('animate');
+}
+
+document.addEventListener('keypress', keyPressed)
+
+function keyPressed(e) {
+    if(e.keyCode == 32) {
+        setTimeout(show, 300);
+    }
+}
+
+function tooltipShow() {
+    tip.style.opacity = 1;
 }
 
 setTimeout(show, 500)

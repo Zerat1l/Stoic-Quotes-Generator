@@ -37,6 +37,18 @@
     padding-bottom: 200px;
     color: aliceblue;   
 }
+#footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+#tooltip {
+    opacity: 0;
+    position: fixed;
+    bottom: 30px;
+    color: aliceblue;   
+    font-size: 9px;
+}
 
 .animate {
     animation-name: fade;
