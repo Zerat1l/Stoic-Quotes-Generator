@@ -32,7 +32,7 @@ function show() {
     
     quote.textContent = quotesArray.text;
     author.textContent = `-${quotesArray.author}-`;
-    
+  
     getQuotes();
     addAnimation();
 }
