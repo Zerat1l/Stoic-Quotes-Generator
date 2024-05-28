@@ -21,6 +21,24 @@
     margin-left: 30px;
     font-size: 26px;
 }
+#autoPlay {
+    color: aliceblue;
+    font-size: 13px;
+    position: absolute;
+    right: 30px;
+    top: 50px;
+}
+#stopPlay {
+    color: aliceblue;
+    font-size: 13px;
+    position: absolute;
+    right: 30px;
+    top: 50px;
+}
+#autoPlay:hover {
+    font-size: 14px;  
+}
+
 
 #quote {
     margin: auto;

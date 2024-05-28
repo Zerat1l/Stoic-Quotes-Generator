@@ -33,7 +33,7 @@ function show() {
     
     quote.textContent = quotesArray.text;
     author.textContent = `-${quotesArray.author}-`;
-  
+    
     getQuotes();
     addAnimation();
     setInterval(tooltipShow, 3000)
@@ -63,6 +63,39 @@ function tooltipShow() {
 }
 
 setTimeout(show, 500)
+const autoplayBtn = document.querySelector('#autoPlay');
+
+autoplayBtn.addEventListener('click', decide);
+
+function decide() {
+    console.log(autoplayBtn.textContent);
+
+    if(autoplayBtn.textContent == 'autoplay is OFF') {
+        autoPlay();
+        autoplayBtn.textContent = 'autoplay is ON'
+    } else {
+        stopAutoPlay();
+        autoplayBtn.textContent = 'autoplay is OFF'
+    }
+}
+
+
+
+function autoPlay() {
+    let queteWordLength = quotesArray.text.split(' ').length;
+    let interval = Math.round((queteWordLength / 2.5) * 1000);
+    
+    autoplayBtn.textContent = 'autoplay is ON'
+    show();
+    setTimeout(autoPlay, interval);
+    
+    console.log(interval);
+}
+
+function stopAutoPlay() {
+    autoplayBtn.textContent = 'autoplay is OFF';
+    clearTimeout(autoPlay);
+}
 
 
 
